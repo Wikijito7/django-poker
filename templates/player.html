@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Jugador - {{ jugador.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ jugador.name }}</h1>
+    <p>Fichas: {{ jugador.fichas }}</p>
+    <p>Pais: {{ jugador.pais }}</p>
+    <img src="/{{ jugador.imagen }}" alt="imagen del jugador">
+    <h2>Partidas</h2>
+    <ul>
+        {% for partida in jugador.partidas.all %}
+            <li>{{ partida }}</li>
+        {% empty %}
+            <li>No hay pertidas registradas</li>
+        {% endfor %}
+
+    </ul>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ Partidas }}{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for partida in partidas %}
+            <li>
+                {{ partida.name }} ({{ partida.fichas_en_juego }}) {{ partida.fecha }}
+            </li>
+        {% empty %}
+            <span>No hay partidas.. SadPepe</span>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

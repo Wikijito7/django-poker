@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ Jugadores }}{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for jugador in jugadores %}
+            <li>
+                <a href="/jugador/{{ jugador.id }}">{{ jugador.name }} ({{ jugador.fichas }})</a>
+            </li>
+        {% empty %}
+            <span>No hay jugadores.. SadPepe</span>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
